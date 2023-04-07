@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator for FCC Antique BootCampers</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="favicon" href="favicon.ico">
+</head>
+
+<body>
+    <header>
+         
+        <img src="img/freeCodeCamp_red_logo.png" alt="freeCodeCampLogo">
+        <h4>Claim your certificate now!🥰</h4>
+
+    </header>
+    <main>
+
+        <label for="name">Please enter the information exactly as you would like it to appear on the certificate.</label>
+        <input required type="text" name="Name" autocomplete="name" placeholder="Enter your name" id="name" minlength="3"
+            maxlength="30">
+        <Button id="submitBtn">Prepare Certificate</Button>
+    
+
+        <!-- About Section -->
+        <!-- <h4>Certificate Generator</h4>
+        <p>This website is designed to help freeCodeCamp Antique Bootcampers create thier own 
+        personalized certificates to showcase thier achievements and progress in the bootcamp program.
+        <br> The certificate generator is completely free and easy to use, making it the perfect tool
+        <br> for anyone looking to add a professional touch to thier resume or portfolio.
+        </p> -->
+        
+        <!-- FCC  -->
+        <h1> <a href="https://www.freecodecamp.org" target="_blank"
+            rel="noopener noreferrer">Learn to code - for free.</a></h1>
+        
+    
+        <!-- Footer -->
+    <br>
+    <br>
+    <footer>
+        <div class="text-center"><span>Made with ❤ by <a href="https://github.com/coder-ralph">CoderRalph</a> | © 2023</span></div>
+      </footer>
+
+    <!-- Scripts -->
+    </main>
+    <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+    <script src="./FileSaver.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

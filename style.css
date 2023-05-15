@@ -160,6 +160,20 @@ header h4 {
   cursor: pointer;
 }
 
+/* styles for the sample certificate */
+.sample-certificate {
+  margin-top: 20px;
+}
+
+.sample-certificate img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border: 10px solid black;
+  border-radius: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
 
 
 /* footer */

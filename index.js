@@ -1,8 +1,7 @@
-const userName = document.getElementById("name");
+const fullName = document.getElementById("full-name");
 const submitBtn = document.getElementById("submitBtn");
 
 const { PDFDocument, rgb, degrees } = PDFLib;
-
 
 const capitalize = (str, lower = false) =>
   (lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, (match) =>
@@ -10,14 +9,13 @@ const capitalize = (str, lower = false) =>
   );
 
 submitBtn.addEventListener("click", () => {
-  const val = capitalize(userName.value);
+  const val = capitalize(fullName.value);
 
   //check if the text is empty or not
-  if (val.trim() !== "" && userName.checkValidity()) {
-    // console.log(val);
+  if (val.trim() !== "" && fullName.checkValidity()) {
     generatePDF(val);
   } else {
-    userName.reportValidity();
+    firstName.reportValidity();
   }
 });
 
@@ -41,7 +39,7 @@ const generatePDF = async (name) => {
   const pages = pdfDoc.getPages();
   const firstPage = pages[0];
 
-// Draw a string of text diagonally across the first page
+  // Draw a string of text diagonally across the first page
   firstPage.drawText(name, {
     x: 320,
     y: 330,
@@ -54,11 +52,6 @@ const generatePDF = async (name) => {
   const pdfBytes = await pdfDoc.save();
   console.log("Done creating");
 
-  // this was for creating uri and showing in iframe
-
-  // const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
-  // document.getElementById("pdf").src = pdfDataUri;
-
   var file = new File(
     [pdfBytes],
     "Certificate of Achievement.pdf",
@@ -66,7 +59,7 @@ const generatePDF = async (name) => {
       type: "application/pdf;charset=utf-8",
     }
   );
- saveAs(file);
+  saveAs(file);
 };
 
 // init();

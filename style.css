@@ -97,6 +97,42 @@ a {
   }
 }
 
+/* Header */
+header {
+  text-align: justify;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  p {
+    font-size: 14px;
+  }
+}
+
+/* Certificate Generator Animation */
+header h4 {
+  font-weight: 600; /* semi-bold */
+  animation: pulse 1s infinite; /* add animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
 /* footer */
 footer{
   font-family: 'Poppins', sans-serif;

@@ -29,23 +29,23 @@ const generatePDF = async (name) => {
   pdfDoc.registerFontkit(fontkit);
 
   //get font
-  const fontBytes = await fetch("./Sanchez-Regular.ttf").then((res) =>
+  const fontBytes = await fetch("./Poppins-ExtraBold.ttf").then((res) =>
     res.arrayBuffer()
   );
 
   // Embed our custom font in the document
-  const SanChezFont = await pdfDoc.embedFont(fontBytes);
+  const PoppinsFont = await pdfDoc.embedFont(fontBytes);
 
   const pages = pdfDoc.getPages();
   const firstPage = pages[0];
 
   // Draw a string of text diagonally across the first page
   firstPage.drawText(name, {
-    x: 320,
+    x: 300,
     y: 330,
-    size: 32,
-    font: SanChezFont,
-    color: rgb(0, 0, 0),
+    size: 33.5,
+    font: PoppinsFont,
+    color: rgb(4/255, 29/255, 41/255),
   });
 
   // Serialize the PDFDocument to bytes (a Uint8Array)

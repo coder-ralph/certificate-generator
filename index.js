@@ -29,12 +29,12 @@ const generatePDF = async (name) => {
   pdfDoc.registerFontkit(fontkit);
 
   //get font
-  const fontBytes = await fetch("./Poppins-ExtraBold.ttf").then((res) =>
+  const fontBytes = await fetch("./GreatVibes.ttf").then((res) =>
     res.arrayBuffer()
   );
 
   // Embed our custom font in the document
-  const PoppinsFont = await pdfDoc.embedFont(fontBytes);
+  const GreatVibesFont = await pdfDoc.embedFont(fontBytes);
 
   const pages = pdfDoc.getPages();
   const firstPage = pages[0];
@@ -43,10 +43,10 @@ const generatePDF = async (name) => {
   firstPage.drawText(name, {
     x: 300,
     y: 330,
-    size: 33.5,
-    font: PoppinsFont,
+    size: 37.5,
+    font: GreatVibesFont,
     color: rgb(4/255, 29/255, 41/255),
-  });
+});
 
   // Serialize the PDFDocument to bytes (a Uint8Array)
   const pdfBytes = await pdfDoc.save();
